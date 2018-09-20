@@ -10,13 +10,14 @@ namespace OPlinq
         static void Main(string[] args)
         {
 
-            var BandRawData = CreateBandRawData();
-            var DistRawdata = CreateDistRawData();
+            SumEven();
+            //var BandRawData = CreateBandRawData();
+            //var DistRawdata = CreateDistRawData();
 
-            PrintOPData(BandRawData);
-            PrintDistData(DistRawdata);
+            //PrintOPData(BandRawData);
+            //PrintDistData(DistRawdata);
 
-            JoinOPDistData(BandRawData, DistRawdata);
+            //JoinOPDistData(BandRawData, DistRawdata);
 
 
         }
@@ -127,6 +128,16 @@ namespace OPlinq
             //    }
             //    Console.WriteLine(Environment.NewLine);
             //}
+        }
+
+        private static void SumEven()
+        {
+            var numbers = Enumerable.Range(1, 10);
+            var s = (from num in numbers
+                      where num % 2 == 0
+                      select num).Sum();
+                       
+
         }
     }
 }
